@@ -1,0 +1,8 @@
+sandbox-data/
+.venv/
+__pycache__/
+*.png
+.DS_Store
+*.log
+.env
+.ssh/

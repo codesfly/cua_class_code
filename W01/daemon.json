@@ -1,0 +1,5 @@
+{
+  "registry-mirrors": [
+    "https://<你的专属加速地址>.mirror.aliyuncs.com"
+  ]
+}
