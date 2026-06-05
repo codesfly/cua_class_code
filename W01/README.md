@@ -7,7 +7,6 @@
 | 文件 | 用途 | 怎么用 |
 |---|---|---|
 | `docker-compose.yml` | W1 隔离沙箱（Webtop，强制 X11） | 放进你的课程主目录 `cua-camp/`，`docker compose up -d`，浏览器开 https://localhost:3001 |
-| `daemon.json` | 国内镜像加速模板 | 内容填进 Docker Desktop → Settings → Docker Engine（Linux 写 `/etc/docker/daemon.json`），重启 Docker |
 | `hello_world.py` | 第一个自动化脚本（鼠标自己画方块） | 在沙箱桌面的终端里跑：先 `sudo apt update && sudo apt install -y python3-pip python3-tk scrot && pip3 install pyautogui` |
 | `ssh-lab.yml` | 可选：用 ssh 连本地容器练手 | `docker compose -f ssh-lab.yml up -d`，再 `ssh -p 2222 student@localhost` |
 | `gitignore.txt` | `.gitignore` 模板 | 复制为 `cua-camp/.gitignore`（**去掉 `.txt` 后缀**） |
@@ -15,6 +14,6 @@
 ## 关键提醒
 
 - **`PIXELFLUX_WAYLAND=false` 这行别删**：pyautogui 注入鼠标键盘靠 X11，Selkies 默认走 Wayland 会打不动、截图黑、坐标点不准，W3/W4 的自动化全依赖它。
-- **镜像加速地址会失效**：`daemon.json` 里的地址去阿里云 / 腾讯云 / 华为云容器镜像服务控制台领最新的，别照抄网上过期地址；改完 `docker info` 末尾能看到 `Registry Mirrors` 才算生效。
+- **拉镜像慢就用 Clash 代理，别用国内镜像源**：镜像站只同步了一部分镜像，碰到它没收录或被过滤掉的就拉不到，还常年失效。开 Clash 的 Allow LAN，Docker Desktop → Settings → Resources → Proxies 填 `http://127.0.0.1:7890`（Windows 用 `http://host.docker.internal:7890`，端口以你 Clash 客户端为准），重启 Docker 后 `docker info` 能看到 `HTTP Proxy` 才算生效。
 - **沙箱只是练习场**：本周里面怎么操作都不碰你的真系统；但 Agent 本身是会看错、点错的程序，等 W9 起真做能自己决策的 Agent，碰到删文件、改配置、花钱这类不可逆操作，必须留一道人类确认。
 - **别把 3001 端口暴露到公网**（即使设了密码也不建议）。
