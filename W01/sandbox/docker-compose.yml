@@ -1,5 +1,5 @@
 # W1 沙箱：Linux 桌面 + 浏览器可视化（LinuxServer Webtop，2025-06 起基于 Selkies）
-# 用法：放进你的课程主目录 cua-camp/，在该目录执行  docker compose up -d
+# 用法：放进 cua-camp/sandbox/ 文件夹（一个容器一个独立文件夹），在该文件夹执行  docker compose up -d
 # 浏览器打开 https://localhost:3001，首次自签证书点「高级 → 继续前往 localhost」
 services:
   sandbox:

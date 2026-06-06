@@ -1,6 +1,6 @@
 # 可选：用 ssh 连一个本地容器，完整练一遍 ssh
 # （日常拿沙箱 shell 用 docker exec -it cua-sandbox bash 就够；这个只是为了练手 ssh）
-# 用法：docker compose -f ssh-lab.yml up -d  然后  ssh -p 2222 student@localhost
+# 用法：放进 cua-camp/ssh-lab/ 文件夹（和 sandbox 平级），在该文件夹  docker compose up -d  然后  ssh -p 2222 student@localhost
 # 环境变量名/端口以 linuxserver/openssh-server 官方文档当前版本为准，先本机跑通再用
 services:
   ssh-lab:
