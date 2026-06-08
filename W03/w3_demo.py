@@ -1,5 +1,5 @@
 # w3_demo.py —— 读清单、逐个安全点击、出错重试、写日志
-# 在 W1 沙箱桌面的终端里跑：python3 w3_demo.py（依赖 pyautogui，W1 已装）
+# 在 W1 沙箱桌面的终端里跑：python3 w3_demo.py
 import time
 import pyautogui
 

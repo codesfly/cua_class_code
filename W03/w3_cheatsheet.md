@@ -8,8 +8,12 @@ import pyautogui
 import pyperclip
 
 # 文件读写：读一行一个目标、写日志（一律带 encoding）
+targets = []
 with open("targets.txt", encoding="utf-8") as f:
-    targets = [line.strip() for line in f if line.strip()]   # 去空行
+    for line in f:               # 逐行读
+        line = line.strip()      # 去首尾空格 / 换行
+        if line:                 # 跳过空行
+            targets.append(line)
 with open("result.log", "a", encoding="utf-8") as f:         # a 追加、w 覆盖
     f.write("处理完成\n")
 
