@@ -2,11 +2,11 @@
 # 在 W1 沙箱桌面的终端里跑：python3 w2_demo.py（依赖 W1 已装的 pyautogui）
 import pyautogui, time
 
-pyautogui.FAILSAFE = True   # 鼠标甩到左上角可紧急中止
+pyautogui.FAILSAFE = True   # 鼠标快速移到左上角可紧急中止
 
-def click_at(x, y, pause=0.5):
+def click_at(x, y, duration=0.5):
     """移到 (x, y) 再点一下"""
-    pyautogui.moveTo(x, y, duration=pause)
+    pyautogui.moveTo(x, y, duration=duration)
     pyautogui.click()
 
 # 一批要依次点击的坐标（列表）

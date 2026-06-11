@@ -4,8 +4,8 @@ pyautogui.FAILSAFE = True
 
 click_points = [(300, 200), (300, 400), (300, 600)]
 
-def click_at(x, y, pause=0.5):
-    # TODO: 移到 (x, y) 再点一下（用 pyautogui.moveTo + click）
+def click_at(x, y, duration=0.5):
+    # TODO: 移到 (x, y) 再点一下（用 pyautogui.moveTo(x, y, duration=duration)，再 pyautogui.click()）
     pass
 
 time.sleep(2)
