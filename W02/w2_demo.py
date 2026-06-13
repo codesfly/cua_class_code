@@ -1,5 +1,8 @@
 # w2_demo.py —— 用「数据 + 循环 + 判断 + 函数」驱动鼠标
-# 在 W1 沙箱桌面的终端里跑：python3 w2_demo.py（依赖 W1 已装的 pyautogui）
+# 只在 webtop 浏览器画面里打开的那个终端跑：python3 w2_demo.py
+#   别在自己电脑的终端跑，也别在 docker exec 进去的 shell 里跑——那两个连不上 webtop 桌面，鼠标不会动。
+#   鼠标没反应？同一个终端先跑 check_display.py 自检（echo $DISPLAY 应是 :1，不是就 export DISPLAY=:1 再跑）。
+# 依赖 W1 已装的 pyautogui
 import pyautogui, time
 
 pyautogui.FAILSAFE = True   # 鼠标快速移到左上角可紧急中止
