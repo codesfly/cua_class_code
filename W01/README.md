@@ -7,7 +7,8 @@
 | 文件 | 用途 | 怎么用 |
 |---|---|---|
 | `sandbox/docker-compose.yml` | W1 隔离沙箱（Webtop，强制 X11） | 放进 `cua-camp/sandbox/`，在该文件夹 `docker compose up -d`，浏览器开 https://localhost:3001 |
-| `hello_world.py` | 第一个自动化脚本（鼠标自己画方块） | 在沙箱桌面的终端里跑：先 `sudo apt update && sudo apt install -y python3-pip python3-tk scrot && pip3 install pyautogui` |
+| `hello_world.py` | 第一个自动化脚本（驱动鼠标走一圈、弹窗收尾） | 在沙箱桌面的终端里跑：先 `sudo apt update && sudo apt install -y python3-pip python3-tk scrot && pip3 install pyautogui` |
+| `show_cursor.py` | 给指针配个看得见的红点替身（webtop 不画程序移动的系统光标，想看鼠标滑动时用） | 跑 demo 前另开终端 `python3 show_cursor.py &`；关掉用 `pkill -f show_cursor.py` |
 | `ssh-lab/docker-compose.yml` | 可选·方式 2：单独起 SSH 容器练手 ssh | 放进 `cua-camp/ssh-lab/`，在该文件夹 `docker compose up -d`，再 `ssh -p 2222 student@localhost` |
 | `gitignore.txt` | `.gitignore` 模板 | 复制为 `cua-camp/.gitignore`（**去掉 `.txt` 后缀**） |
 
